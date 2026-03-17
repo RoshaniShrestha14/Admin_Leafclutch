@@ -1,0 +1,48 @@
+const internshipPrograms = [
+  {
+    title: "Programming Languages",
+    slug: "programming-languages",
+    badge: "General",
+    totalFee: "NPR 6,000",
+    feeLabel: "TOTAL FEE",
+    enrollText: "Enroll with just NPR 1,500 · Choose any one course",
+    sectionTitle: "AVAILABLE COURSES",
+    features: ["Python", "C / C++", "Java", "JavaScript"],
+    highlighted: false,
+  },
+  {
+    title: "Core Tech & Design",
+    slug: "core-tech-design",
+    badge: "General",
+    totalFee: "NPR 6,000",
+    feeLabel: "TOTAL FEE",
+    enrollText: "Enroll with just NPR 1,500 · Choose any one course",
+    sectionTitle: "AVAILABLE COURSES",
+    features: ["Fullstack / Frontend / Backend Dev", "Cybersecurity", "Graphic Design / UI/UX Design", "SEO"],
+    highlighted: false,
+  },
+  {
+    title: "Data & AI Programs",
+    slug: "data-ai-programs",
+    badge: "MOST POPULAR",
+    totalFee: "NPR 8,000",
+    feeLabel: "TOTAL FEE",
+    enrollText: "Enroll with just NPR 2,500 · Choose any one course",
+    sectionTitle: "AVAILABLE COURSES",
+    features: ["Artificial Intelligence / Machine Learning", "Data Analyst / Data Science", "Agentic AI", "Generative AI"],
+    highlighted: true,
+  },
+  {
+    title: "DSA Program",
+    slug: "dsa-program",
+    badge: "General",
+    totalFee: "NPR 7,000",
+    feeLabel: "TOTAL FEE",
+    enrollText: "Enroll with just NPR 2,000 · All included",
+    sectionTitle: "WHAT'S INCLUDED",
+    features: ["DSA Theory", "350+ LeetCode Questions", "100 Days Challenge", "Interview Prep"],
+    highlighted: false,
+  },
+];
+
+export default internshipPrograms;

@@ -3,31 +3,29 @@ import { NavLink, useNavigate } from "react-router-dom";
 import {
   LayoutDashboard,
   Users,
-  GraduationCap,
-  Tv,
+  BookOpen,
   Briefcase,
-  Search,
-  LayoutGrid,
-  FolderOpen,
+  MessageSquareQuote,
   LogOut,
   User,
   ChevronLeft,
   ChevronRight,
   Menu,
   X,
+  CircleHelp,
 } from "lucide-react";
 import "./Sidebar.css";
 
 const menuItems = [
   { id: "overview", label: "Overview", icon: LayoutDashboard, url: "/dashboard" },
-  { id: "teams", label: "Team", icon: Users, url: "/dashboard/teams" },
-  { id: "mentors", label: "Mentors", icon: Users, url: "/dashboard/mentors" },
-  { id: "interns-list", label: "Interns", icon: GraduationCap, url: "/dashboard/interns" },
-  { id: "trainings", label: "Training", icon: Tv, url: "/dashboard/trainings" },
-  { id: "internships-posts", label: "Internships", icon: Briefcase, url: "/dashboard/internships" },
-  { id: "jobs-posts", label: "Jobs", icon: Search, url: "/dashboard/jobs" },
-  { id: "services", label: "Services", icon: LayoutGrid, url: "/dashboard/services" },
-  { id: "projects", label: "Projects", icon: FolderOpen, url: "/dashboard/projects" },
+  { id: "Courses", label: "Courses", icon: BookOpen, url: "/dashboard/courses" },
+  // { id: "mentors", label: "Mentors", icon: Users, url: "/dashboard/mentors" },
+  // { id: "interns-list", label: "Interns", icon: GraduationCap, url: "/dashboard/interns" },
+  { id: "faq", label: "FAQs", icon: CircleHelp, url: "/dashboard/faqs" },
+  { id: "internships-plans", label: "Internships Plans", icon: Briefcase, url: "/dashboard/internships" },
+  // { id: "jobs-posts", label: "Jobs", icon: Search, url: "/dashboard/jobs" },
+  // { id: "", label: "Services", icon: LayoutGrid, url: "/dashboard/services" },
+  { id: "Testimonials", label: "Testimonials", icon: MessageSquareQuote, url: "/dashboard/testimonials" },
 ];
 
 const AdminSidebar = () => {
@@ -122,7 +120,7 @@ const AdminSidebar = () => {
           onClick={() => setCollapsed(!collapsed)}
           aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
-          {collapsed ? <ChevronRight size={13} /> : <ChevronLeft size={13} />}
+          {collapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
         </button>
       </aside>
     </>
