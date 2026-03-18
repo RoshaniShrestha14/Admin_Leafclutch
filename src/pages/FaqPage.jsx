@@ -52,7 +52,7 @@ export default function FaqPage() {
               />
             </label>
 
-            <NavLink to="/dashboard/faqs/add" className="courses-add-btn">
+            <NavLink to="/faqs/add" className="courses-add-btn">
               <Plus size={18} /> Add FAQ
             </NavLink>
           </div>
@@ -77,7 +77,7 @@ export default function FaqPage() {
                   <div className="faq-admin-body">
                     <p>{item.answer}</p>
                     <div className="faq-admin-actions">
-                      <NavLink to={`/dashboard/faqs/${item.slug}/edit`} className="admin-btn admin-btn-primary">
+                      <NavLink to={`/faqs/${item.slug}/edit`} className="admin-btn admin-btn-primary">
                         <Pencil size={14} /> Edit FAQ
                       </NavLink>
                       <button type="button" className="admin-btn admin-btn-danger" onClick={() => handleDelete(item)}>

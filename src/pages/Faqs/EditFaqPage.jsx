@@ -12,7 +12,7 @@ export default function EditFaqPage() {
 
   const handleUpdate = (payload) => {
     upsertFaq(payload, faqSlug);
-    navigate("/dashboard/faqs");
+    navigate("/faqs");
   };
 
   if (!faq) {
@@ -20,7 +20,7 @@ export default function EditFaqPage() {
       <section className="program-page">
         <div className="program-page__container">
           <h1 className="program-page__title">FAQ Not Found</h1>
-          <Link to="/dashboard/faqs" className="admin-btn admin-btn-primary">
+          <Link to="/faqs" className="admin-btn admin-btn-primary">
             <ArrowLeft size={14} /> Back to FAQs
           </Link>
         </div>
@@ -30,7 +30,7 @@ export default function EditFaqPage() {
 
   return (
     <section className="courses-page">
-      <Link to="/dashboard/faqs" className="program-page__back-link" style={{ marginBottom: "18px" }}>
+      <Link to="/faqs" className="program-page__back-link" style={{ marginBottom: "18px" }}>
         <ArrowLeft size={20} /> FAQs
       </Link>
       <p className="breadcrumb">Dashboard &gt; FAQs &gt; Edit</p>

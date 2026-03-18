@@ -10,12 +10,12 @@ export default function AddFaq() {
 
   const handleCreate = (payload) => {
     upsertFaq(payload);
-    navigate("/dashboard/faqs");
+    navigate("/faqs");
   };
 
   return (
     <section className="courses-page">
-      <Link to="/dashboard/faqs" className="program-page__back-link" style={{ marginBottom: "18px" }}>
+      <Link to="/faqs" className="program-page__back-link" style={{ marginBottom: "18px" }}>
         <ArrowLeft size={20} /> Frequently Asked Questions
       </Link>
       <h1 className="form-title">Add FAQ</h1>

@@ -12,7 +12,7 @@ export default function EditTestimonialPage() {
 
   const handleUpdate = (payload) => {
     const updated = upsertTestimonial(payload, testimonialSlug);
-    navigate(`/dashboard/testimonials/${updated.slug}`);
+    navigate(`/testimonials/${updated.slug}`);
   };
 
   if (!testimonial) {
@@ -20,7 +20,7 @@ export default function EditTestimonialPage() {
       <section className="program-page">
         <div className="program-page__container">
           <h1 className="program-page__title">Testimonial Not Found</h1>
-          <Link to="/dashboard/testimonials" className="admin-btn admin-btn-primary">
+          <Link to="/testimonials" className="admin-btn admin-btn-primary">
             <ArrowLeft size={14} /> Back to Testimonials
           </Link>
         </div>
@@ -30,7 +30,7 @@ export default function EditTestimonialPage() {
 
   return (
     <section className="courses-page">
-      <Link to="/dashboard/testimonials" className="program-page__back-link" style={{ marginBottom: "18px" }}>
+      <Link to="/testimonials" className="program-page__back-link" style={{ marginBottom: "18px" }}>
         <ArrowLeft size={20} /> Testimonials
       </Link>
       <p className="breadcrumb">Dashboard &gt; Testimonials &gt; Edit</p>

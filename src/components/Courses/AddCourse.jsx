@@ -9,12 +9,12 @@ const AddCourse = () => {
 
   const handleCreateCourse = (payload) => {
     const created = upsertCourseProgram(payload);
-    navigate(`/dashboard/courses/${created.slug}`);
+    navigate(`/courses/${created.slug}`);
   };
 
   return (
     <div className="courses-page">
-      <Link to="/dashboard/courses" className="program-page__back-link" style={{ marginBottom: "18px" }}>
+      <Link to="/courses" className="program-page__back-link" style={{ marginBottom: "18px" }}>
         <ArrowLeft size={20} /> Courses
       </Link>
       <h1 className="form-title">Add New Course</h1>

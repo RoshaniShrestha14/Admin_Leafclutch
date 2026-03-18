@@ -10,12 +10,12 @@ export default function AddTestimonial() {
 
   const handleCreate = (payload) => {
     const created = upsertTestimonial(payload);
-    navigate(`/dashboard/testimonials/${created.slug}`);
+    navigate(`/testimonials/${created.slug}`);
   };
 
   return (
     <section className="courses-page">
-      <Link to="/dashboard/testimonials" className="program-page__back-link" style={{ marginBottom: "18px" }}>
+      <Link to="/testimonials" className="program-page__back-link" style={{ marginBottom: "18px" }}>
         <ArrowLeft size={20} /> Testimonials
       </Link>
       <h1 className="form-title">Add Testimonial</h1>

@@ -14,7 +14,7 @@ export default function InternshipProgramPage() {
     const shouldDelete = window.confirm(`Delete "${internship.title}"? This action cannot be undone.`);
     if (!shouldDelete) return;
     deleteInternshipProgramBySlug(internship.slug);
-    navigate("/dashboard/internships");
+    navigate("/internships");
   };
 
   if (!internship) {
@@ -22,7 +22,7 @@ export default function InternshipProgramPage() {
       <section className="program-page">
         <div className="program-page__container">
           <h1 className="program-page__title">Internship Plan Not Found</h1>
-          <Link to="/dashboard/internships" className="admin-btn admin-btn-primary">
+          <Link to="/internships" className="admin-btn admin-btn-primary">
             <ArrowLeft size={14} /> Back to Internship Plans
           </Link>
         </div>
@@ -34,7 +34,7 @@ export default function InternshipProgramPage() {
     <section className="program-page">
       <div className="program-page__container">
         <div className="program-page__topbar">
-          <Link to="/dashboard/internships" className="program-page__back-link">
+          <Link to="/internships" className="program-page__back-link">
             <ArrowLeft size={14} /> Internship Plans
           </Link>
           <div className="program-status">{internship.badge}</div>
@@ -60,7 +60,7 @@ export default function InternshipProgramPage() {
         <aside className="program-side-card">
           <h3>Admin Controls</h3>
           <div className="program-actions">
-            <Link to={`/dashboard/internships/${internship.slug}/edit`} className="admin-btn admin-btn-primary admin-btn-block">
+            <Link to={`/internships/${internship.slug}/edit`} className="admin-btn admin-btn-primary admin-btn-block">
               <Pencil size={14} /> Edit Internship Plan
             </Link>
             <button type="button" className="admin-btn admin-btn-danger admin-btn-block" onClick={handleDelete}>

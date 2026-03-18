@@ -12,7 +12,7 @@ export default function CourseProgramPage() {
     const shouldDelete = window.confirm(`Delete "${program.title}"? This action cannot be undone.`);
     if (!shouldDelete) return;
     deleteCourseProgramBySlug(program.slug);
-    navigate("/dashboard/courses");
+    navigate("/courses");
   };
 
   if (!program) {
@@ -24,7 +24,7 @@ export default function CourseProgramPage() {
           <p className="program-page__lead">
             This course route does not match any program in the admin catalog.
           </p>
-          <Link to="/dashboard/courses" className="admin-btn admin-btn-primary">
+          <Link to="/courses" className="admin-btn admin-btn-primary">
             <ArrowLeft size={14} /> Back to Courses
           </Link>
         </div>
@@ -36,7 +36,7 @@ export default function CourseProgramPage() {
     <section className="program-page">
       <div className="program-page__container">
         <div className="program-page__topbar">
-          <Link to="/dashboard/courses" className="program-page__back-link">
+          <Link to="/courses" className="program-page__back-link">
             <ArrowLeft size={14} /> Courses
           </Link>
           <div className="program-status">
@@ -81,7 +81,7 @@ export default function CourseProgramPage() {
           <aside className="program-side-card">
             <h3>Admin Controls</h3>
             <div className="program-actions">
-              <Link to={`/dashboard/courses/${program.slug}/edit`} className="admin-btn admin-btn-primary admin-btn-block">
+              <Link to={`/courses/${program.slug}/edit`} className="admin-btn admin-btn-primary admin-btn-block">
                 <Pencil size={14} /> Edit Program
               </Link>
               <button type="button" className="admin-btn admin-btn-danger admin-btn-block" onClick={handleDelete}>

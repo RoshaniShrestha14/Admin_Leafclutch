@@ -12,7 +12,7 @@ export default function EditCoursePage() {
 
   const handleUpdateCourse = (payload) => {
     const updated = upsertCourseProgram(payload, courseSlug);
-    navigate(`/dashboard/courses/${updated.slug}`);
+    navigate(`/courses/${updated.slug}`);
   };
 
   if (!program) {
@@ -22,7 +22,7 @@ export default function EditCoursePage() {
           <p className="program-page__eyebrow">Edit Program</p>
           <h1 className="program-page__title">Program Not Found</h1>
           <p className="program-page__lead">Cannot edit a program that does not exist.</p>
-          <Link to="/dashboard/courses" className="admin-btn admin-btn-primary">
+          <Link to="/courses" className="admin-btn admin-btn-primary">
             <ArrowLeft size={14} /> Back to Courses
           </Link>
         </div>
@@ -32,7 +32,7 @@ export default function EditCoursePage() {
 
   return (
     <section className="courses-page">
-      <Link to="/dashboard/courses" className="program-page__back-link" style={{ marginBottom: "18px" }}>
+      <Link to="/courses" className="program-page__back-link" style={{ marginBottom: "18px" }}>
         <ArrowLeft size={20} /> Courses
       </Link>
       <p className="breadcrumb">Dashboard &gt; Courses &gt; Edit Program</p>

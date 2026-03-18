@@ -69,7 +69,7 @@ export default function TestimonialsPage() {
               </button>
             </div>
 
-            <NavLink to="/dashboard/testimonials/add" className="courses-add-btn">
+            <NavLink to="/testimonials/add" className="courses-add-btn">
               <Plus size={18} /> Add Testimonial
             </NavLink>
           </div>
@@ -77,7 +77,7 @@ export default function TestimonialsPage() {
 
         <div className="testimonials-list">
           {filteredTestimonials.map((item) => (
-            <NavLink to={`/dashboard/testimonials/${item.slug}`} className="testimonial-card" key={item.slug}>
+            <NavLink to={`/testimonials/${item.slug}`} className="testimonial-card" key={item.slug}>
               <div className="testimonial-card__stars" aria-label={`${item.rating} out of 5 stars`}>
                 {Array.from({ length: item.rating }).map((_, index) => (
                   <Star key={`${item.slug}-star-${index}`} size={18} fill="currentColor" />

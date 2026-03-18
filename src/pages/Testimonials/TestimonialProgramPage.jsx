@@ -14,7 +14,7 @@ export default function TestimonialProgramPage() {
     const shouldDelete = window.confirm(`Delete testimonial from "${testimonial.name}"? This action cannot be undone.`);
     if (!shouldDelete) return;
     deleteTestimonialBySlug(testimonial.slug);
-    navigate("/dashboard/testimonials");
+    navigate("/testimonials");
   };
 
   if (!testimonial) {
@@ -22,7 +22,7 @@ export default function TestimonialProgramPage() {
       <section className="program-page">
         <div className="program-page__container">
           <h1 className="program-page__title">Testimonial Not Found</h1>
-          <Link to="/dashboard/testimonials" className="admin-btn admin-btn-primary">
+          <Link to="/testimonials" className="admin-btn admin-btn-primary">
             <ArrowLeft size={14} /> Back to Testimonials
           </Link>
         </div>
@@ -34,7 +34,7 @@ export default function TestimonialProgramPage() {
     <section className="program-page">
       <div className="program-page__container">
         <div className="program-page__topbar">
-          <Link to="/dashboard/testimonials" className="program-page__back-link">
+          <Link to="/testimonials" className="program-page__back-link">
             <ArrowLeft size={14} /> Testimonials
           </Link>
           <div className="program-status">{testimonial.program}</div>
@@ -63,7 +63,7 @@ export default function TestimonialProgramPage() {
         <aside className="program-side-card">
           <h3>Admin Controls</h3>
           <div className="program-actions">
-            <Link to={`/dashboard/testimonials/${testimonial.slug}/edit`} className="admin-btn admin-btn-primary admin-btn-block">
+            <Link to={`/testimonials/${testimonial.slug}/edit`} className="admin-btn admin-btn-primary admin-btn-block">
               <Pencil size={14} /> Edit Testimonial
             </Link>
             <button type="button" className="admin-btn admin-btn-danger admin-btn-block" onClick={handleDelete}>

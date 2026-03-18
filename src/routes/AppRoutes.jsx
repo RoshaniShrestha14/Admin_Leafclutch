@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import AdminSidebar from "../components/Layout/AdminSidebar";
 import NotFound from "../components/ui/NotFound";
 import CoursesPage from "../pages/Courses/CoursesPage";
@@ -30,37 +30,40 @@ function LogoutRoute({ onLogout }) {
   return <Navigate to="/login" replace />;
 }
 
+function LegacyDashboardRedirect() {
+  const location = useLocation();
+  const nextPath = location.pathname.replace(/^\/dashboard/, "") || "/";
+  return <Navigate to={`${nextPath}${location.search}${location.hash}`} replace />;
+}
+
 function DashboardShellRoutes() {
   return (
     <div className="dashboard-shell">
       <AdminSidebar />
       <main className="dashboard-main min-w-0">
         <Routes>
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
-          <Route path="/dashboard" element={<OverviewPage />} />
-          <Route path="/dashboard/courses" element={<CoursesPage />} />
-          <Route path="/dashboard/courses/:courseSlug" element={<CourseProgramPage />} />
-          <Route path="/dashboard/courses/:courseSlug/edit" element={<EditCoursePage />} />
-          <Route path="/dashboard/add-course" element={<AddCourse />} />
-          <Route path="/dashboard/faqs" element={<FaqPage />} />
-          <Route path="/dashboard/faqs/add" element={<AddFaq />} />
-          <Route path="/dashboard/faqs/:faqSlug/edit" element={<EditFaqPage />} />
-          <Route path="/dashboard/testimonials" element={<TestimonialsPage />} />
-          <Route path="/dashboard/testimonials/add" element={<AddTestimonial />} />
-          <Route path="/dashboard/testimonials/:testimonialSlug" element={<TestimonialProgramPage />} />
-          <Route path="/dashboard/testimonials/:testimonialSlug/edit" element={<EditTestimonialPage />} />
-          <Route path="/dashboard/add-testimonial" element={<AddTestimonial />} />
-          <Route path="/dashboard/internships" element={<InternshipsPage />} />
-          <Route path="/dashboard/internships/add" element={<AddInternship />} />
-          <Route path="/dashboard/internships/:trainingSlug" element={<InternshipProgramPage />} />
-          <Route path="/dashboard/internships/:trainingSlug/edit" element={<EditInternshipPage />} />
-          <Route path="/dashboard/trainings" element={<Navigate to="/dashboard/internships" replace />} />
-          <Route path="/dashboard/add-training" element={<Navigate to="/dashboard/internships/add" replace />} />
-          <Route path="/dashboard/trainings/:trainingSlug" element={<InternshipDetailRedirect />} />
-          <Route path="/dashboard/trainings/:trainingSlug/edit" element={<InternshipEditRedirect />} />
-          <Route path="/courses" element={<Navigate to="/dashboard/courses" replace />} />
-          <Route path="/courses/:courseSlug" element={<Navigate to="/dashboard/courses" replace />} />
-          <Route path="/add-course" element={<Navigate to="/dashboard/add-course" replace />} />
+          <Route path="/" element={<OverviewPage />} />
+          <Route path="/courses" element={<CoursesPage />} />
+          <Route path="/courses/:courseSlug" element={<CourseProgramPage />} />
+          <Route path="/courses/:courseSlug/edit" element={<EditCoursePage />} />
+          <Route path="/add-course" element={<AddCourse />} />
+          <Route path="/faqs" element={<FaqPage />} />
+          <Route path="/faqs/add" element={<AddFaq />} />
+          <Route path="/faqs/:faqSlug/edit" element={<EditFaqPage />} />
+          <Route path="/testimonials" element={<TestimonialsPage />} />
+          <Route path="/testimonials/add" element={<AddTestimonial />} />
+          <Route path="/testimonials/:testimonialSlug" element={<TestimonialProgramPage />} />
+          <Route path="/testimonials/:testimonialSlug/edit" element={<EditTestimonialPage />} />
+          <Route path="/add-testimonial" element={<AddTestimonial />} />
+          <Route path="/internships" element={<InternshipsPage />} />
+          <Route path="/internships/add" element={<AddInternship />} />
+          <Route path="/internships/:trainingSlug" element={<InternshipProgramPage />} />
+          <Route path="/internships/:trainingSlug/edit" element={<EditInternshipPage />} />
+          <Route path="/trainings" element={<Navigate to="/internships" replace />} />
+          <Route path="/add-training" element={<Navigate to="/internships/add" replace />} />
+          <Route path="/trainings/:trainingSlug" element={<InternshipDetailRedirect />} />
+          <Route path="/trainings/:trainingSlug/edit" element={<InternshipEditRedirect />} />
+          <Route path="/dashboard/*" element={<LegacyDashboardRedirect />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
@@ -84,7 +87,7 @@ export default function AdminRoutes() {
     <Routes>
       <Route
         path="/login"
-        element={authenticated ? <Navigate to="/dashboard" replace /> : <LoginPage onLogin={handleLogin} />}
+        element={authenticated ? <Navigate to="/" replace /> : <LoginPage onLogin={handleLogin} />}
       />
       <Route path="/logout" element={<LogoutRoute onLogout={handleLogout} />} />
       <Route path="*" element={authenticated ? <DashboardShellRoutes /> : <Navigate to="/login" replace />} />

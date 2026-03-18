@@ -17,15 +17,15 @@
 // import "./Sidebar.css";
 
 // const menuItems = [
-//   { id: "overview", label: "Overview", icon: LayoutDashboard, url: "/dashboard" },
-//   { id: "Courses", label: "Courses", icon: BookOpen, url: "/dashboard/courses" },
-//   // { id: "mentors", label: "Mentors", icon: Users, url: "/dashboard/mentors" },
-//   // { id: "interns-list", label: "Interns", icon: GraduationCap, url: "/dashboard/interns" },
-//   { id: "faq", label: "FAQs", icon: CircleHelp, url: "/dashboard/faqs" },
-//   { id: "internships-plans", label: "Internships Plans", icon: Briefcase, url: "/dashboard/internships" },
-//   // { id: "jobs-posts", label: "Jobs", icon: Search, url: "/dashboard/jobs" },
-//   // { id: "", label: "Services", icon: LayoutGrid, url: "/dashboard/services" },
-//   { id: "Testimonials", label: "Testimonials", icon: MessageSquareQuote, url: "/dashboard/testimonials" },
+//   { id: "overview", label: "Overview", icon: LayoutDashboard, url: "/" },
+//   { id: "Courses", label: "Courses", icon: BookOpen, url: "/courses" },
+//   // { id: "mentors", label: "Mentors", icon: Users, url: "/mentors" },
+//   // { id: "interns-list", label: "Interns", icon: GraduationCap, url: "/interns" },
+//   { id: "faq", label: "FAQs", icon: CircleHelp, url: "/faqs" },
+//   { id: "internships-plans", label: "Internships Plans", icon: Briefcase, url: "/internships" },
+//   // { id: "jobs-posts", label: "Jobs", icon: Search, url: "/jobs" },
+//   // { id: "", label: "Services", icon: LayoutGrid, url: "/services" },
+//   { id: "Testimonials", label: "Testimonials", icon: MessageSquareQuote, url: "/testimonials" },
 // ];
 
 // const AdminSidebar = () => {
@@ -66,7 +66,7 @@
 
 //       <aside className={sidebarClass}>
 //         <NavLink
-//           to="/dashboard"
+//           to="/"
 //           end
 //           className="sidebar__logo"
 //           onClick={() => setMobileOpen(false)}
@@ -151,11 +151,11 @@ import {
 import "./Sidebar.css";
 
 const menuItems = [
-  { id: "overview", label: "Overview", icon: LayoutDashboard, url: "/dashboard" },
-  { id: "Courses", label: "Courses", icon: BookOpen, url: "/dashboard/courses" },
-  { id: "faq", label: "FAQs", icon: CircleHelp, url: "/dashboard/faqs" },
-  { id: "internships-plans", label: "Internships Plans", icon: Briefcase, url: "/dashboard/internships" },
-  { id: "Testimonials", label: "Testimonials", icon: MessageSquareQuote, url: "/dashboard/testimonials" },
+  { id: "overview", label: "Overview", icon: LayoutDashboard, url: "/" },
+  { id: "Courses", label: "Courses", icon: BookOpen, url: "/courses" },
+  { id: "faq", label: "FAQs", icon: CircleHelp, url: "/faqs" },
+  { id: "internships-plans", label: "Internships Plans", icon: Briefcase, url: "/internships" },
+  { id: "Testimonials", label: "Testimonials", icon: MessageSquareQuote, url: "/testimonials" },
 ];
 
 const AdminSidebar = () => {

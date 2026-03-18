@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 const courses = [
   {
     id: 1,
+    slug: "python-for-ai-data-science",
     title: "Python for AI & Data Science",
     category: "Artificial Intelligence & Machine Learning",
     duration: "4 Weeks",
@@ -62,7 +63,7 @@ const CourseTable = () => {
 
                 {openMenu === course.id && (
                   <div className="dropdown">
-                    <p onClick={() => navigate(`/edit/${course.id}`)}>
+                    <p onClick={() => navigate(`/courses/${course.slug}/edit`)}>
                       Edit
                     </p>
                     <p onClick={() => handleDelete(course.id)}>

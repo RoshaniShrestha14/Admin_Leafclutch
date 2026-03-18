@@ -65,7 +65,7 @@ export default function InternshipsPage() {
               </button>
             </div>
 
-            <NavLink to="/dashboard/internships/add" className="courses-add-btn">
+            <NavLink to="/internships/add" className="courses-add-btn">
               <Plus size={18} /> Add Internship Plan
             </NavLink>
           </div>
@@ -74,7 +74,7 @@ export default function InternshipsPage() {
         <div className="internship-grid">
           {filteredInternships.map((item) => (
             <NavLink
-              to={`/dashboard/internships/${item.slug}`}
+              to={`/internships/${item.slug}`}
               className={`internship-card${item.highlighted ? " highlighted" : ""}`}
               key={item.slug}
             >

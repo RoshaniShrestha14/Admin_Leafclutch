@@ -88,7 +88,7 @@ export default function CoursesPage() {
                   </span>
                 </div>
 
-                <NavLink to={`/dashboard/courses/${course.slug}`} className="admin-btn admin-btn-primary admin-btn-block">
+                <NavLink to={`/courses/${course.slug}`} className="admin-btn admin-btn-primary admin-btn-block">
                   View Program <ArrowRight size={14} />
                 </NavLink>
               </div>

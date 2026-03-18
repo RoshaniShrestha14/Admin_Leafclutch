@@ -10,12 +10,12 @@ export default function AddInternship() {
 
   const handleCreate = (payload) => {
     const created = upsertInternshipProgram(payload);
-    navigate(`/dashboard/internships/${created.slug}`);
+    navigate(`/internships/${created.slug}`);
   };
 
   return (
     <section className="courses-page">
-      <Link to="/dashboard/internships" className="program-page__back-link" style={{ marginBottom: "18px" }}>
+      <Link to="/internships" className="program-page__back-link" style={{ marginBottom: "18px" }}>
         <ArrowLeft size={20} /> Internship Plans
       </Link>
       <h1 className="form-title">Add Internship Plan</h1>

@@ -63,7 +63,7 @@ const SearchBar = ({
         )}
       </div>
 
-      <NavLink to="/dashboard/add-course" className="courses-add-btn">
+      <NavLink to="/add-course" className="courses-add-btn">
         <Plus size={18} /> Add New Course
       </NavLink>
     </div>

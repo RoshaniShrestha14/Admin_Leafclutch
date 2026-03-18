@@ -12,7 +12,7 @@ export default function EditInternshipPage() {
 
   const handleUpdate = (payload) => {
     const updated = upsertInternshipProgram(payload, trainingSlug);
-    navigate(`/dashboard/internships/${updated.slug}`);
+    navigate(`/internships/${updated.slug}`);
   };
 
   if (!internship) {
@@ -20,7 +20,7 @@ export default function EditInternshipPage() {
       <section className="program-page">
         <div className="program-page__container">
           <h1 className="program-page__title">Internship Plan Not Found</h1>
-          <Link to="/dashboard/internships" className="admin-btn admin-btn-primary">
+          <Link to="/internships" className="admin-btn admin-btn-primary">
             <ArrowLeft size={14} /> Back to Internship Plans
           </Link>
         </div>
@@ -30,7 +30,7 @@ export default function EditInternshipPage() {
 
   return (
     <section className="courses-page">
-      <Link to="/dashboard/internships" className="program-page__back-link" style={{ marginBottom: "18px" }}>
+      <Link to="/internships" className="program-page__back-link" style={{ marginBottom: "18px" }}>
         <ArrowLeft size={20} /> Internship Plans
       </Link>
       <p className="breadcrumb">Dashboard &gt; Internship Plans &gt; Edit</p>
