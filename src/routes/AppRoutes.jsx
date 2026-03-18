@@ -20,6 +20,7 @@ import AddFaq from "../components/Faqs/AddFaq";
 import EditFaqPage from "../pages/Faqs/EditFaqPage";
 import { InternshipDetailRedirect, InternshipEditRedirect } from "./InternshipRedirect";
 import LoginPage from "../pages/LoginPage";
+import ScrollToTop from "./ScrollToTop";
 import { isAuthenticated, logoutAdmin } from "../data/authStore";
 
 function LogoutRoute({ onLogout }) {
@@ -84,13 +85,16 @@ export default function AdminRoutes() {
   };
 
   return (
-    <Routes>
-      <Route
-        path="/login"
-        element={authenticated ? <Navigate to="/" replace /> : <LoginPage onLogin={handleLogin} />}
-      />
-      <Route path="/logout" element={<LogoutRoute onLogout={handleLogout} />} />
-      <Route path="*" element={authenticated ? <DashboardShellRoutes /> : <Navigate to="/login" replace />} />
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route
+          path="/login"
+          element={authenticated ? <Navigate to="/" replace /> : <LoginPage onLogin={handleLogin} />}
+        />
+        <Route path="/logout" element={<LogoutRoute onLogout={handleLogout} />} />
+        <Route path="*" element={authenticated ? <DashboardShellRoutes /> : <Navigate to="/login" replace />} />
+      </Routes>
+    </>
   );
 }
