@@ -30,6 +30,9 @@ export default function EditFaqPage() {
 
   return (
     <section className="courses-page">
+      <Link to="/dashboard/faqs" className="program-page__back-link" style={{ marginBottom: "18px" }}>
+        <ArrowLeft size={20} /> FAQs
+      </Link>
       <p className="breadcrumb">Dashboard &gt; FAQs &gt; Edit</p>
       <h1 className="form-title">Edit FAQ</h1>
       <p className="subtext" style={{ marginBottom: "16px" }}>

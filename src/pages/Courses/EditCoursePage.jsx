@@ -32,6 +32,9 @@ export default function EditCoursePage() {
 
   return (
     <section className="courses-page">
+      <Link to="/dashboard/courses" className="program-page__back-link" style={{ marginBottom: "18px" }}>
+        <ArrowLeft size={20} /> Courses
+      </Link>
       <p className="breadcrumb">Dashboard &gt; Courses &gt; Edit Program</p>
       <h1 className="form-title">Edit Program</h1>
       <p className="subtext" style={{ marginBottom: "16px" }}>

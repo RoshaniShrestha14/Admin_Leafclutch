@@ -35,7 +35,7 @@
 .testimonial-card__quote {
   margin: 0;
   color: #3f4f67;
-  font-size: 1.05rem;
+  font-size: 0.96rem;
   font-style: italic;
   line-height: 1.8;
 }
@@ -60,14 +60,13 @@
 .testimonial-card__author h3 {
   margin: 0;
   color: #17253f;
-  font-size: 1.75rem;
-  font-size: clamp(1.1rem, 1.6vw, 1.85rem);
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
 }
 
 .testimonial-card__author p {
   margin: 4px 0 0;
   color: #2350d2;
-  font-size: 1rem;
+  font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;

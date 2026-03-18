@@ -50,14 +50,14 @@
 .internship-card h3 {
   margin: 0;
   color: inherit;
-  font-size: 2rem;
-  line-height: 1.15;
+  font-size: 1.2rem;
+  line-height: 1.35;
 }
 
 .internship-card__price {
   margin: 0;
   color: #2148be;
-  font-size: 2.2rem;
+  font-size: 1.2rem;
   font-weight: 900;
 }
 
@@ -66,7 +66,7 @@
 }
 
 .internship-card__price span {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
   margin-left: 8px;
   letter-spacing: 0.06em;
@@ -75,6 +75,7 @@
 .internship-card__enroll {
   margin: 0;
   color: rgba(14, 38, 80, 0.82);
+  font-size: 0.94rem;
   line-height: 1.5;
 }
 
@@ -85,7 +86,7 @@
 .internship-card h4 {
   margin: 0;
   color: inherit;
-  font-size: 1.15rem;
+  font-size: 0.94rem;
   letter-spacing: 0.06em;
 }
 
@@ -103,6 +104,7 @@
   align-items: center;
   gap: 8px;
   color: inherit;
+  font-size: 0.94rem;
   line-height: 1.4;
 }
 

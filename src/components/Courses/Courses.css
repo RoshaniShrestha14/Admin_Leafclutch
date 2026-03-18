@@ -118,8 +118,11 @@ tbody tr:hover {
 }
 /* Form */
 .form-title {
-  color: #3B35C9;
-  margin-bottom: 20px;
+  margin: 6px 0 12px;
+  color: #24365d;
+  font-size: clamp(1.6rem, 2.4vw, 2rem);
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 .course-form-v2 {
@@ -421,9 +424,10 @@ tbody tr:hover {
 
 .courses-topbar__heading h1 {
   margin: 6px 0 4px;
-  color: #0f2d5c;
-  font-size: clamp(1.9rem, 3vw, 2.4rem);
-  line-height: 1.15;
+  color: #24365d;
+  font-size: clamp(1.6rem, 2.4vw, 2rem);
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 .courses-topbar__heading > p {

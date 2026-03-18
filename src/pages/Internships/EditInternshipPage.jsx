@@ -30,6 +30,9 @@ export default function EditInternshipPage() {
 
   return (
     <section className="courses-page">
+      <Link to="/dashboard/internships" className="program-page__back-link" style={{ marginBottom: "18px" }}>
+        <ArrowLeft size={20} /> Internship Plans
+      </Link>
       <p className="breadcrumb">Dashboard &gt; Internship Plans &gt; Edit</p>
       <h1 className="form-title">Edit Internship Plan</h1>
       <p className="subtext" style={{ marginBottom: "16px" }}>

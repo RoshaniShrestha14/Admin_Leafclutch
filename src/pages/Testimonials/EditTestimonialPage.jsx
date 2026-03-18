@@ -30,6 +30,9 @@ export default function EditTestimonialPage() {
 
   return (
     <section className="courses-page">
+      <Link to="/dashboard/testimonials" className="program-page__back-link" style={{ marginBottom: "18px" }}>
+        <ArrowLeft size={20} /> Testimonials
+      </Link>
       <p className="breadcrumb">Dashboard &gt; Testimonials &gt; Edit</p>
       <h1 className="form-title">Edit Testimonial</h1>
       <p className="subtext" style={{ marginBottom: "16px" }}>

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import AdminSidebar from "../components/Layout/AdminSidebar";
 import NotFound from "../components/ui/NotFound";
@@ -18,8 +19,18 @@ import FaqPage from "../pages/FaqPage";
 import AddFaq from "../components/Faqs/AddFaq";
 import EditFaqPage from "../pages/Faqs/EditFaqPage";
 import { InternshipDetailRedirect, InternshipEditRedirect } from "./InternshipRedirect";
+import LoginPage from "../pages/LoginPage";
+import { isAuthenticated, logoutAdmin } from "../data/authStore";
 
-export default function AdminRoutes() {
+function LogoutRoute({ onLogout }) {
+  useEffect(() => {
+    onLogout();
+  }, [onLogout]);
+
+  return <Navigate to="/login" replace />;
+}
+
+function DashboardShellRoutes() {
   return (
     <div className="dashboard-shell">
       <AdminSidebar />
@@ -54,5 +65,29 @@ export default function AdminRoutes() {
         </Routes>
       </main>
     </div>
+  );
+}
+
+export default function AdminRoutes() {
+  const [authenticated, setAuthenticated] = useState(() => isAuthenticated());
+
+  const handleLogin = () => {
+    setAuthenticated(true);
+  };
+
+  const handleLogout = () => {
+    logoutAdmin();
+    setAuthenticated(false);
+  };
+
+  return (
+    <Routes>
+      <Route
+        path="/login"
+        element={authenticated ? <Navigate to="/dashboard" replace /> : <LoginPage onLogin={handleLogin} />}
+      />
+      <Route path="/logout" element={<LogoutRoute onLogout={handleLogout} />} />
+      <Route path="*" element={authenticated ? <DashboardShellRoutes /> : <Navigate to="/login" replace />} />
+    </Routes>
   );
 }
